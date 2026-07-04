@@ -15,8 +15,21 @@ st.set_page_config(
 # Load Model
 import os
 
-if not os.path.exists("fraud_model.pkl"):
-    import model
+import streamlit as st
+import pickle
+import os
+
+st.title("Fraud Detection Dashboard")
+
+# Load model only
+model_path = "fraud_model.pkl"
+
+if os.path.exists(model_path):
+    with open(model_path, "rb") as f:
+        model = pickle.load(f)
+else:
+    st.error("fraud_model.pkl not found in repo")
+    st.stop()
 
 with open("fraud_model.pkl", "rb") as f:
     model = pickle.load(f)
