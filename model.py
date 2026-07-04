@@ -9,7 +9,7 @@ from imblearn.over_sampling import SMOTE
 from sklearn.metrics import precision_score, recall_score, f1_score
 
 # Load dataset
-df = pd.read_csv("../DATA/credit_card_fraud_dataset.csv")
+df = pd.read_csv("credit_card_fraud_dataset.csv")
 
 print(df.head())
 
@@ -61,7 +61,7 @@ print("Model saved successfully!")
 # Save accuracy to file
 with open("accuracy.txt", "w") as f:
     f.write(str(round(accuracy * 100, 2)))
-    
+
 
 print("Accuracy file created successfully!")
 import numpy as np

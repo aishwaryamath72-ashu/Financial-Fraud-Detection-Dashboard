@@ -13,7 +13,13 @@ st.set_page_config(
     layout="wide"
 )
 # Load Model
-model = pickle.load(open("fraud_model.pkl", "rb"))
+import os
+
+if not os.path.exists("fraud_model.pkl"):
+    import model
+
+with open("fraud_model.pkl", "rb") as f:
+    model = pickle.load(f)
 
 # Load Model Accuracy
 with open("accuracy.txt", "r") as f:
