@@ -20,7 +20,7 @@ with open("accuracy.txt", "r") as f:
     accuracy = f.read()
     cm = np.load("confusion_matrix.npy")
 # Load Dataset
-df = pd.read_csv("../DATA/credit_card_fraud_dataset.csv")
+df = pd.read_csv("credit_card_fraud_dataset.csv")
 df["TransactionDate"] = pd.to_datetime(
     df["TransactionDate"],
     dayfirst=True

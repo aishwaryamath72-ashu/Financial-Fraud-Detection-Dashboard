@@ -61,6 +61,7 @@ print("Model saved successfully!")
 # Save accuracy to file
 with open("accuracy.txt", "w") as f:
     f.write(str(round(accuracy * 100, 2)))
+    
 
 print("Accuracy file created successfully!")
 import numpy as np
